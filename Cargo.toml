@@ -2,5 +2,9 @@
 name = "collect-me"
 version = "0.1.0"
 edition = "2021"
+authors = ["Jaco Malan <jacom@codelog.co.za>"]
+repository = "https://github.com/JacoMalan1/collect-me"
+description = "Additional collections not included in the Rust standard library."
+license = "MIT"
 
 [dependencies]
