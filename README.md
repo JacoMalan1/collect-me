@@ -1,10 +1,10 @@
 # Collect-Me
 
 ![codecov](https://codecov.io/github/JacoMalan1/collect-me/graph/badge.svg?token=C4CKWOHKUI)
-![test](https://github.com/JacoMalan1/call-me/actions/workflows/test.yml/badge.svg)
-![safety](https://github.com/JacoMalan1/call-me/actions/workflows/safety.yml/badge.svg)
-![schedule](https://github.com/JacoMalan1/call-me/actions/workflows/scheduled.yml/badge.svg)
-![check](https://github.com/JacoMalan1/call-me/actions/workflows/check.yml/badge.svg)
+![test](https://github.com/JacoMalan1/collect-me/actions/workflows/test.yml/badge.svg)
+![safety](https://github.com/JacoMalan1/collect-me/actions/workflows/safety.yml/badge.svg)
+![schedule](https://github.com/JacoMalan1/collect-me/actions/workflows/scheduled.yml/badge.svg)
+![check](https://github.com/JacoMalan1/collect-me/actions/workflows/check.yml/badge.svg)
 
 # Description
 
