@@ -2,7 +2,7 @@ use alloc::boxed::Box;
 
 /// A binary tree containing key-value pairs where the keys can be ordered.
 ///
-/// It should be noted that for most applications, a [`std::collections::HashMap`] will offer
+/// It should be noted that for most applications, a `HashMap` will offer
 /// superior performance to that of a binary tree, since each node in the tree requires a heap
 /// allocation (apart from the root). Hash maps also provided amortized-constant lookup times where
 /// a binary tree gives `O(log(n))`.
@@ -12,7 +12,7 @@ use alloc::boxed::Box;
 ///
 /// # Examples
 ///
-/// This example shows how the binary tree functions much like a [`std::collections::HashMap`], but
+/// This example shows how the binary tree functions much like a `HashMap`, but
 /// gives `O(log(n))` lookup time for keys that are of an ordinal type.
 /// ```
 /// use collect_me::tree::binary_tree::BinaryTree;
@@ -60,7 +60,7 @@ where
     ///
     /// # Note
     ///
-    /// Like with [`std::collections::HashMap`] the key does not get updated.
+    /// Like with `HashMap` the key does not get updated.
     pub fn insert(&mut self, key: K, value: V) -> Option<V> {
         let result = if let Some(ref mut root) = self.root {
             root.insert(key, value)
