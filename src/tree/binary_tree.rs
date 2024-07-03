@@ -199,6 +199,8 @@ mod tests {
     fn empty() {
         let tree: BinaryTree<i32, i32> = BinaryTree::new();
         assert_eq!(tree.get(&0), None);
+        assert_eq!(tree.len(), 0);
+        assert!(tree.is_empty());
     }
 
     #[test]
@@ -221,5 +223,43 @@ mod tests {
         assert_eq!(tree.get(&0), Some(&'B'));
         assert_eq!(tree.get(&2), Some(&'C'));
         assert_eq!(tree.get(&-1), None);
+    }
+
+    #[test]
+    fn get_mut() {
+        let mut tree = BinaryTree::new();
+        tree.insert(1, 'A');
+        tree.insert(2, 'B');
+        tree.insert(0, 'C');
+
+        assert_eq!(tree.get(&0), Some(&'C'));
+
+        let val = tree.get_mut(&1).expect("Failed to mutably reference value");
+        *val = 'X';
+
+        let val = tree.get_mut(&2).expect("Failed to mutably reference value");
+        *val = 'Y';
+
+        let val = tree.get_mut(&0).expect("Failed to mutably reference value");
+        *val = 'Z';
+
+        assert_eq!(tree.get(&1), Some(&'X'));
+        assert_eq!(tree.get(&2), Some(&'Y'));
+        assert_eq!(tree.get(&0), Some(&'Z'));
+    }
+
+    #[test]
+    fn index() {
+        let mut tree = BinaryTree::new();
+        tree.insert(0, 'A');
+        assert_eq!(tree[&0], 'A');
+    }
+
+    #[test]
+    #[should_panic]
+    fn index_nonexistent() {
+        let mut tree = BinaryTree::new();
+        tree.insert(0, 'A');
+        let _ = tree[&1];
     }
 }
