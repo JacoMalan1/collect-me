@@ -1,3 +1,5 @@
+use alloc::boxed::Box;
+
 /// A binary tree containing key-value pairs where the keys can be ordered.
 ///
 /// It should be noted that for most applications, a [`std::collections::HashMap`] will offer
@@ -81,7 +83,7 @@ where
     /// Returns a reference to the value corresponding to the key.
     pub fn get<Q>(&self, key: &Q) -> Option<&V>
     where
-        K: std::borrow::Borrow<Q>,
+        K: core::borrow::Borrow<Q>,
         Q: PartialOrd + Eq,
     {
         self.root.as_ref().and_then(|root| root.get(key))
@@ -90,7 +92,7 @@ where
     /// Returns a mutable reference to the value corresponding to the key.
     pub fn get_mut<Q>(&mut self, key: &Q) -> Option<&mut V>
     where
-        K: std::borrow::Borrow<Q>,
+        K: core::borrow::Borrow<Q>,
         Q: PartialOrd + Eq,
     {
         self.root.as_mut().and_then(|root| root.get_mut(key))
@@ -135,13 +137,13 @@ where
                 None
             }
         } else {
-            Some(std::mem::replace(&mut self.value, value))
+            Some(core::mem::replace(&mut self.value, value))
         }
     }
 
     fn get<Q>(&self, key: &Q) -> Option<&V>
     where
-        K: std::borrow::Borrow<Q>,
+        K: core::borrow::Borrow<Q>,
         Q: PartialOrd + Eq,
     {
         if *key == *self.key.borrow() {
@@ -155,7 +157,7 @@ where
 
     fn get_mut<Q>(&mut self, key: &Q) -> Option<&mut V>
     where
-        K: std::borrow::Borrow<Q>,
+        K: core::borrow::Borrow<Q>,
         Q: PartialOrd + Eq,
     {
         if *key == *self.key.borrow() {
@@ -174,7 +176,7 @@ where
     }
 }
 
-impl<K, V> std::ops::Index<&K> for BinaryTree<K, V>
+impl<K, V> core::ops::Index<&K> for BinaryTree<K, V>
 where
     K: PartialOrd + Eq,
 {
