@@ -1,2 +1,3 @@
-/// Binary Trees
-pub mod binary_tree;
+pub use binary_tree::BinaryTree;
+
+mod binary_tree;
