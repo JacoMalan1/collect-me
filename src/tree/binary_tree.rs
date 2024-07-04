@@ -15,7 +15,7 @@ use alloc::boxed::Box;
 /// This example shows how the binary tree functions much like a `HashMap`, but
 /// gives `O(log(n))` lookup time for keys that are of an ordinal type.
 /// ```
-/// use collect_me::tree::binary_tree::BinaryTree;
+/// use collect_me::BinaryTree;
 ///
 /// let mut tree = BinaryTree::new();
 /// tree.insert(0, "John");

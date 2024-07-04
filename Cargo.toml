@@ -8,3 +8,9 @@ description = "Additional collections not included in the Rust standard library.
 license = "MIT"
 
 [dependencies]
+rand = { version = "0.8", default-features = false, features = ["alloc"] }
+
+[features]
+default = ["std"]
+std = ["rand/std", "rand/std_rng", "alloc"]
+alloc = []

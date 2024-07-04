@@ -16,15 +16,22 @@
 //!
 //! | Data-structure | Insertion    |   Removal    |    Search    |
 //! | -------------- | ------------ | ------------ | ------------ |
-//! | [`BinaryTree`] | _O(log(n))~_ | _O(log(n))~_ | _O(log(n))~_ |
-//! | [`SkipList`]   | _O(log(n))~_ | _O(log(n))~_ | _O(log(n))~_ |
+//! |  `BinaryTree`  | _O(log(n))~_ | _O(log(n))~_ | _O(log(n))~_ |
+//! |   `SkipList`   | _O(log(n))~_ | _O(log(n))~_ | _O(log(n))~_ |
 //!
 //! `~` - _Average_ complexity
 
+#[cfg(feature = "std")]
+extern crate std;
+
+#[cfg(feature = "std")]
 pub use list::SkipList;
+#[cfg(feature = "alloc")]
 pub use tree::BinaryTree;
 
+#[cfg(feature = "alloc")]
 extern crate alloc;
+
 /// List-like data-structures
 pub mod list;
 /// Tree-like data-structures
