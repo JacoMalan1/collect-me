@@ -36,3 +36,5 @@ extern crate alloc;
 pub mod list;
 /// Tree-like data-structures
 pub mod tree;
+/// Modified vector data structures
+pub mod vec;
